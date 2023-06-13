@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 function Tabs({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
