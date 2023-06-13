@@ -2,29 +2,32 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 
-// import React, { useState } from "react";
+import React from "react";
+import Tabs from "./Tabs";
 
-function Tabs({ tabs }) {
-  const [activeTab, setActiveTab] = useState(0);
+const tabData = [
+  {
+    title: "Tab 1",
+    content: "This is the content for Tab 1",
+  },
+  {
+    title: "Tab 2",
+    content: "This is the content for Tab 2",
+  },
+  {
+    title: "Tab 3",
+    content: "This is the content for Tab 3",
+  },
+];
 
-  const handleTabClick = (index) => {
-    setActiveTab(index);
-  };
-
+function App() {
   return (
     <div>
-      <ul>
-        {tabs.map((tab, index) => (
-          <li key={index} onClick={() => handleTabClick(index)}>
-            Tab {index + 1}
-          </li>
-        ))}
-      </ul>
-      <p>This is the content for Tab {activeTab + 1}</p>
+      <Tabs tabs={tabData} />
     </div>
   );
 }
 
-export default Tabs;
+export default App;
 
 ReactDOM.render(<App />, document.getElementById("root"));
